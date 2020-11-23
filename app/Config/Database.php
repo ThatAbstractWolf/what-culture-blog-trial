@@ -51,7 +51,6 @@ class Database extends \CodeIgniter\Database\Config
 		'port'     => 3306,
 	];
 
-
 	/**
 	 * This database connection is used when
 	 * running PHPUnit database tests.
