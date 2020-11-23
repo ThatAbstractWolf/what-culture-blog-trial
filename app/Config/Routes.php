@@ -16,7 +16,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('AccountController');
+$routes->setDefaultController('BlogController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -30,7 +30,24 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'AccountController::index');
+$routes->get('/', 'BlogController::index');
+
+// Login
+$routes->get('/account/login', 'AccountController::login');
+$routes->post('/account/login', 'AccountController::login');
+
+$routes->get('/account/logout', 'AccountController::logout');
+
+$routes->get('/blogs', 'BlogController::index');
+
+$routes->post('/blogs/create', 'BlogController::create');
+$routes->get('/blogs/create', 'BlogController::create');
+
+$routes->post('/blogs/(:any)/edit', 'BlogController::edit/$1');
+$routes->get('/blogs/(:any)/edit', 'BlogController::edit/$1');
+
+$routes->get('/blogs/(:any)', 'BlogController::get/$1');
+
 
 /**
  * --------------------------------------------------------------------

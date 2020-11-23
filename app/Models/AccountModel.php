@@ -21,9 +21,9 @@ class AccountModel extends Model {
 
         $data = json_decode(json_encode($statement->getResult()), true);
 
-        if (sizeof($data) > 0) {
-            $data = $data[0];
-        }
+        if (sizeof($data) < 1) return false;
+
+        $data = $data[0];
 
         unset($data['password']);
 

@@ -1,4 +1,4 @@
-<div class="login-wrapper account-wrapper container h-100">
+<div class="login-wrapper container h-100">
 
     <div class="row justify-content-center align-items-center h-100">
 
@@ -6,7 +6,7 @@
 
             <div class="container">
 
-                <form action="/" method="POST" autocomplete="off">
+                <form action="<?php echo base_url('account/login') ?>" method="post" autocomplete="off">
 
                     <h1 class="mb-5">Login to your account..</h1>
 
@@ -35,6 +35,14 @@
 
                         <?php endif ?>
                     </div>
+
+                    <?php if (isset($errors) && isset($errors['wrong_credentials'])): ?>
+
+                        <div class="alert alert-danger mt-3" role="alert">
+                            <?php echo $errors['wrong_credentials']; ?>
+                        </div>
+
+                    <?php endif ?>
 
                     <div class="row">
                         <div class="col-12">

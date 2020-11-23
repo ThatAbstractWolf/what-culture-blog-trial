@@ -2,6 +2,48 @@ body {
     background-color: #CC3333;
 }
 
-.account-wrapper form label {
+form label {
     float: left;
+}
+
+.blog-post {
+    background-color: #1b1b1b;
+    padding: 25px;
+
+    margin-bottom: 25px;
+}
+
+.blog-post h2, .blog-post p, .blog-post a {
+    color: #FFFFFF;
+}
+
+.blog-post a {
+    background-color: #CC3333;
+    padding: 8px 15px;
+}
+
+.blog-post a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.pages p {
+    margin-bottom: 15px;
+}
+
+.pages li a {
+    color: #FFFFFF;
+    background-color: #CC3333;
+    padding: 8px 15px;
+
+    margin-right: 10px;
+}
+
+.pages li[class*="active"] a {
+    background-color: #4ecc33;
+}
+
+.pages a:hover {
+    cursor: pointer;
+    text-decoration: none;
 }
