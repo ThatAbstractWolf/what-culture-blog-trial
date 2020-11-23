@@ -43,8 +43,11 @@ $routes->get('/blogs', 'BlogController::index');
 $routes->post('/blogs/create', 'BlogController::create');
 $routes->get('/blogs/create', 'BlogController::create');
 
+
 $routes->post('/blogs/(:any)/edit', 'BlogController::edit/$1');
 $routes->get('/blogs/(:any)/edit', 'BlogController::edit/$1');
+
+$routes->get('/blogs/(:any)/delete', 'BlogController::delete/$1');
 
 $routes->get('/blogs/(:any)', 'BlogController::get/$1');
 

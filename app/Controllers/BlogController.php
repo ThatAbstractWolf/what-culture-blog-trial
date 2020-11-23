@@ -40,7 +40,7 @@ class BlogController extends BaseController
             $data['errors'] = $this->validator->getErrors();
 
             echo view('templates/header', $data);
-            echo view('blog/create', $data);
+            echo view('blog/create');
         } else {
 
             $model->save([
@@ -99,8 +99,22 @@ class BlogController extends BaseController
         return false;
     }
 
-    public function remove() {
+    public function delete($slug) {
 
+        if (!session()->has("login_data"))
+            return redirect()->to('/');
+
+        $model = new BlogModel();
+
+        $found_data = $model->getBlogBySlug($slug);
+
+        $model->delete([
+            'id' => $found_data['id']
+        ]);
+
+        // Blog listing
+        echo view('templates/header');
+        return redirect()->to('/blogs');
     }
 
     public function get($slug) {

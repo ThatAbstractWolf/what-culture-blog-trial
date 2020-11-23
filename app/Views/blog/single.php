@@ -12,7 +12,8 @@
                 <?php endif ?>
 
                 <?php if (session()->has("login_data")): ?>
-                    <a class="btn btn-primary mb-5" href="<?php echo base_url('blogs/' . $post['slug'] . '/edit') ?>">Edit</a>
+                    <a class="btn btn-warning mb-5" href="<?php echo base_url('blogs/' . $post['slug'] . '/edit') ?>">Edit</a>
+                    <a class="btn btn-danger mb-5" href="<?php echo base_url('blogs/' . $post['slug'] . '/delete') ?>">Delete</a>
                 <?php endif; ?>
 
                 <a class="btn btn-primary mb-5" href="<?php echo base_url('blogs') ?>">Back</a>
