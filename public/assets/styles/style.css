@@ -1,0 +1,7 @@
+body {
+    background-color: #CC3333;
+}
+
+.account-wrapper form label {
+    float: left;
+}
